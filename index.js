@@ -5,6 +5,7 @@ PASSWORD RULES
     3 contains at least one lower case character
     4 contains at least one special character (! # $ % & * +) CHECK THESE
     5 contains at least one number
+    
 
     - Possible additional rules
         - should not contain
@@ -52,7 +53,7 @@ function pwdCheck (pwd) {
         document.getElementById('length-check').innerText = '❌'
         document.getElementById('length-check-container').classList.add('list-group-item-danger')
     }
-    
+
      // --- Check 3: contains at least one lower case character ---
     let hasLowerCase = false
     let hasUpperCase = false
@@ -87,7 +88,7 @@ function pwdCheck (pwd) {
     if (hasLowerCase) {
         document.getElementById('lowercase-check').innerText = '✅'
         document.getElementById('lowercase-check-container').classList.add('list-group-item-success')
-        score++    //score adds one if valid character
+        score = score + 1    //score adds one if valid character
     } else {
         document.getElementById('lowercase-check').innerText = '❌'
         document.getElementById('lowercase-check-container').classList.add('list-group-item-danger')
@@ -96,7 +97,7 @@ function pwdCheck (pwd) {
     if (hasUpperCase) {
         document.getElementById('uppercase-check').innerText = '✅'
         document.getElementById('uppercase-check-container').classList.add('list-group-item-success')
-        score++    //score adds one if valid character
+        score = score + 1     //score adds one if valid character
     } else {
         document.getElementById('uppercase-check').innerText = '❌'
         document.getElementById('uppercase-check-container').classList.add('list-group-item-danger')
@@ -105,7 +106,7 @@ function pwdCheck (pwd) {
     if (hasNumber) {
         document.getElementById('number-check').innerText = '✅'
         document.getElementById('number-check-container').classList.add('list-group-item-success')
-        score++    //score adds one if valid character
+        score = score + 1     //score adds one if valid character
     } else {
         document.getElementById('number-check').innerText = '❌'
         document.getElementById('number-check-container').classList.add('list-group-item-danger')
@@ -114,11 +115,20 @@ function pwdCheck (pwd) {
     if (hasSpecChar ) {
         document.getElementById('specialchar-check').innerText = '✅'
         document.getElementById('specialchar-check-container').classList.add('list-group-item-success')
-        score++    //score adds one if valid character
+        score = score + 1     //score adds one if valid character
     } else {
         document.getElementById('specialchar-check').innerText = '❌'
         document.getElementById('specialchar-check-container').classList.add('list-group-item-danger')
     }
+
+    /*
+    //--- Check 6: contains no easy passwords ---
+    const easyPwds = ['user123', 'admin123', 'password123', 'test123', 'qwerty123']
+    if (easyPwds.!includes(pwd)) {
+        score++ //score adds one if test is passed
+    }
+    //******** */
+
 
     if (score >= 5) {
         document.getElementById("strong-pwd").style.display = 'block'
@@ -127,7 +137,7 @@ function pwdCheck (pwd) {
     } else {
         document.getElementById("weak-pwd").style.display = 'block'
     }
-
+    
 }
 
 /* NOTE - UNCOMMENT THE CODE BELOW TO MAKE THE PASSWORD CHECKER WORK */
@@ -135,8 +145,6 @@ function pwdCheck (pwd) {
 const pwd = prompt("Enter your password")
 //console.log(pwd)
 pwdCheck(pwd)  
-
-
 
 
 
@@ -170,6 +178,13 @@ pwdCheck(pwd)
             https://www.w3schools.com/charsets/ref_html_ascii.asp 
             
             This lists all character codes and reference will explain why the ASCII codes are important in the ordering of the checks in the loop
+
+        
+        3. Full project should have included the following:
+            - name
+            - email
+            - simple passwords (user123, admin123, password123, test123 etc)
+            Short of time so could not complete
 
     */
 
