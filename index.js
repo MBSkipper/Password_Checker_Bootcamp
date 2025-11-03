@@ -42,9 +42,9 @@ function pwdCheck (pwd) {
     
     // --- Check 1: min length = 8 characters ---
     if (pwd.length >= 8) {
-        console.log("Minimum 8 characters 8️⃣ ✅")
+        document.getElementById('length-check').innerText = '✅'
     } else {
-        console.log("Minimum 8 characters not met 8️⃣ ❌")
+        document.getElementById('length-check').innerText = '❌'
     }
     
      // --- Check 3: contains at least one lower case character ---
@@ -79,39 +79,39 @@ function pwdCheck (pwd) {
     }
     
     if (hasLowerCase) {
-        console.log("Contains one lower case character  ✅")
+        document.getElementById('lowercase-check').innerText = '✅'
     } else {
-        console.log("Must contain one lower case character ❌")
+        document.getElementById('lowercase-check').innerText = '❌'
     }
 
     if (hasUpperCase) {
-        console.log("Contains one upper case character  ✅")
+        document.getElementById('uppercase-check').innerText = '✅'
     } else {
-        console.log("Must contain one upper case character ❌")
+        document.getElementById('uppercase-check').innerText = '❌'
     }
 
     if (hasNumber) {
-        console.log("Contains one number  ✅")
+        document.getElementById('number-check').innerText = '✅'
     } else {
-        console.log("Must contain one number ❌")
+        document.getElementById('number-check').innerText = '❌'
     }
 
     if (hasSpecChar ) {
-        console.log("Contains one special character  ✅")
+        document.getElementById('specialchar-check').innerText = '✅'
     } else {
-        console.log("Must contain one special character ❌")
+        document.getElementById('specialchar-check').innerText = '❌'
     }
 
 }
 
-/* NOTE - UNCOMMENT THE CODE BELOW TO MAKE THE PASSWORD CHECKER WORK
+/* NOTE - UNCOMMENT THE CODE BELOW TO MAKE THE PASSWORD CHECKER WORK */
 
 const pwd = prompt("Enter your password")
-console.log(pwd)
+//console.log(pwd)
+pwdCheck(pwd)  
 
-pwdCheck(pwd)
 
-*/
+
 
 
     /*
