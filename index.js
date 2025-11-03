@@ -32,42 +32,57 @@ TESTS
 
 // ---------------PW CHECKING FUNCTION-----------
 
-function pwdEntered (pwd) {
+function pwdCheck (pwd) {
 
     //Check (Guard clause) : if password is empty or null ---
     if (!pwd) {
         console.log("Invalid - please enter a valid password")
         return
     }
-    console.log(pwd)
     
 
-    // ----Check 1: min length = 8 characters
+    // --- Check 1: min length = 8 characters ---
     if (pwd.length >= 8) {
-        console.log("Minimum 8 characters 8️⃣✅")
+        console.log("Minimum 8 characters 8️⃣ ✅")
     } else {
-        console.log("Minimum 8 characters not met 8️⃣❌")
+        console.log("Minimum 8 characters not met 8️⃣ ❌")
+    }
+    
+     // --- Check 3: contains at least one lower case character ---
+    let hasLowerCase = false
+     for (let i = 0; i < pwd.length; i++) {
+        let char = pwd[i]
+        console.log(char) //added to test
+        if (char >= 'a' && char <= 'z') {
+            hasLowerCase = true
+            break
+        }
+    }
+    
+    if (hasLowerCase) {
+        console.log("Contains one lower case character  ✅")
+    } else {
+        console.log("Must contain one lower case character ❌")
     }
 
-    
+
     // --- Check 5: contains at least one number ---
     const digits = ['1', '2', '3', '4', '5', '6','7', '8', '9']
 
-    //a) iterate through characters in password string
+        //a) iterate through characters in password string
         let containsDigit = false //creating this boolean variable is important
         for (let i = 0; i < pwd.length; i++) {
     
-    //b) check if character is in digits array
+        //b) check if character is in digits array
         if(digits.includes(pwd[i])) {
-            console.log('Contains at least one number 1️⃣✅')
+            console.log('Contains at least one number 1️⃣ ✅')
             containsDigit = true // the boolean variable is changed 
             break                //as soon as a number is found further loop iterations are stopped
             } 
-        }                        //complete the checking for digits loop and determine if containsDigit 
-                                 // is true or false, note scope {} of this part of the code
+        }          //complete loop, is containsDigitf alse? note scope {} 
 
         if (!containsDigit) { //if false then pw fails to meet criteria 
-            console.log("Does not contain at least one number 1️⃣❌")
+            console.log("Does not contain at least one number 1️⃣ ❌")
         }
     }
 
@@ -78,7 +93,7 @@ function pwdEntered (pwd) {
 const pwd = prompt("Enter your password")
 console.log(pwd)
 
-pwdEntered(pwd)
+pwdCheck(pwd)
 
 
 
