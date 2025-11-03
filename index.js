@@ -72,8 +72,8 @@ function pwdCheck (pwd) {
             hasNumber = true
         }   
 
-        //--- Check 4: contains at least one special character (! # $ % & *) ---
-        if (char >= '#' && char <= '&') {   //ASCII codes 35-38
+        //--- Check 4: contains at least one special character ( # $ % & ) ---
+        if (char === '!'|| char >= '#' && char <= '&') {   //ASCII codes 35-38
             hasSpecChar = true
         }   
     }
