@@ -104,13 +104,14 @@ function pwdCheck (pwd) {
 
 }
 
+/* NOTE - UNCOMMENT THE CODE BELOW TO MAKE THE PASSWORD CHECKER WORK
 
 const pwd = prompt("Enter your password")
 console.log(pwd)
 
 pwdCheck(pwd)
 
-
+*/
 
 
     /*
