@@ -73,9 +73,9 @@ function pwdCheck (pwd) {
         }   
 
         //--- Check 4: contains at least one special character ( # $ % & ) ---
-        if (char === '!'|| char >= '#' && char <= '&') {   //ASCII codes 35-38
+        if (char >= '!' && char <= '.'|| char >= ':' && char <= '@') {   //ASCII codes 
             hasSpecChar = true
-        }   
+        } 
     }
     
     if (hasLowerCase) {
