@@ -40,7 +40,6 @@ function pwdCheck (pwd) {
         return
     }
     
-
     // --- Check 1: min length = 8 characters ---
     if (pwd.length >= 8) {
         console.log("Minimum 8 characters 8️⃣ ✅")
@@ -50,13 +49,27 @@ function pwdCheck (pwd) {
     
      // --- Check 3: contains at least one lower case character ---
     let hasLowerCase = false
+    let hasUpperCase = false
+    let hasNumber = false
+
      for (let i = 0; i < pwd.length; i++) {
         let char = pwd[i]
-        console.log(char) //added to test
-        if (char >= 'a' && char <= 'z') {
+        console.log(char) //NOTE only added to test code in console - can be removed
+
+    // --- Check 3: contains at least one lower case character ---
+        if (char >= 'a' && char <= 'z') {  //ASCII codes 97 - 122
             hasLowerCase = true
-            break
         }
+
+        //--- Check 2: contains at least one upper case character ---
+        if (char >= 'A' && char <= 'Z') {   ////ASCII codes 65 - 90
+            hasUpperCase = true
+        }   
+        
+        //--- Check 5: contains at least one number ---
+        if (char >= '0' && char <= '9') {   ////ASCII codes 48 - 57
+            hasNumber = true
+        }   
     }
     
     if (hasLowerCase) {
@@ -65,7 +78,19 @@ function pwdCheck (pwd) {
         console.log("Must contain one lower case character ❌")
     }
 
+    if (hasUpperCase) {
+        console.log("Contains one upper case character  ✅")
+    } else {
+        console.log("Must contain one upper case character ❌")
+    }
 
+    if (hasNumber) {
+        console.log("Contains one number  ✅")
+    } else {
+        console.log("Must contain one number ❌")
+    }
+
+    /*
     // --- Check 5: contains at least one number ---
     const digits = ['1', '2', '3', '4', '5', '6','7', '8', '9']
 
@@ -84,10 +109,8 @@ function pwdCheck (pwd) {
         if (!containsDigit) { //if false then pw fails to meet criteria 
             console.log("Does not contain at least one number 1️⃣ ❌")
         }
+        */
     }
-
-   
-
 
 
 const pwd = prompt("Enter your password")
