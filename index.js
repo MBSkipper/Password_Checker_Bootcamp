@@ -36,15 +36,18 @@ function pwdCheck (pwd) {
 
     //Check (Guard clause) : if password is empty or null ---
     if (!pwd) {
-        console.log("Invalid - please enter a valid password")
+        document.getElementById('invalid-pw-alert').style.display = 'block'
+        //console.log("Invalid - please enter a valid password")
         return
     }
     
     // --- Check 1: min length = 8 characters ---
     if (pwd.length >= 8) {
         document.getElementById('length-check').innerText = '✅'
+        document.getElementById('length-check-container').classList.add('list-group-item-success')
     } else {
         document.getElementById('length-check').innerText = '❌'
+        document.getElementById('length-check-container').classList.add('list-group-item-danger')
     }
     
      // --- Check 3: contains at least one lower case character ---
@@ -80,26 +83,34 @@ function pwdCheck (pwd) {
     
     if (hasLowerCase) {
         document.getElementById('lowercase-check').innerText = '✅'
+        document.getElementById('lowercase-check-container').classList.add('list-group-item-success')
     } else {
         document.getElementById('lowercase-check').innerText = '❌'
+        document.getElementById('lowercase-check-container').classList.add('list-group-item-danger')
     }
 
     if (hasUpperCase) {
         document.getElementById('uppercase-check').innerText = '✅'
+        document.getElementById('uppercase-check-container').classList.add('list-group-item-success')
     } else {
         document.getElementById('uppercase-check').innerText = '❌'
+        document.getElementById('uppercase-check-container').classList.add('list-group-item-danger')
     }
 
     if (hasNumber) {
         document.getElementById('number-check').innerText = '✅'
+        document.getElementById('number-check-container').classList.add('list-group-item-success')
     } else {
         document.getElementById('number-check').innerText = '❌'
+        document.getElementById('number-check-container').classList.add('list-group-item-danger')
     }
 
     if (hasSpecChar ) {
         document.getElementById('specialchar-check').innerText = '✅'
+        document.getElementById('specialchar-check-container').classList.add('list-group-item-success')
     } else {
         document.getElementById('specialchar-check').innerText = '❌'
+        document.getElementById('specialchar-check-container').classList.add('list-group-item-danger')
     }
 
 }

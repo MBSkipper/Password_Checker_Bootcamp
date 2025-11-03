@@ -16,42 +16,46 @@
     <!----- Link to stylesheet ----->
     <link rel="stylesheet" href="index.css">
 
-
-    
 </head>
+
 <body>
-<!--Test component (to check if bootstrap connected and working)
+<!--Test component (to check if bootstrap connected and working on set-up)
 <button type="button" class="btn btn-primary">Primary</button>
 -->
 
-<!------ Container ------>
+<!------ CONTAINER ------>
 <div class="container mt-4 text-center" >
     <h1 class="display-4">Password Strength Checker</h1>
 
-    <!--List framework-->
-    <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Minimum length 8 characters
-    <span id="length-check"></span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    At least one upper case character
-    <span id="uppercase-check"></span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    At least one lower case character
-    <span id="lowercase-check"></span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    At least one number
-   <span id="number-check"></span>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    At least one special character
-    <span id="specialchar-check"></span>
-  </li>
+    <!------ Alert ------>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="invalid-pw-alert" style="display: none">
+        <strong>Invalid password!</strong> Please enter a valid password
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
-</ul>
+    <!-- List framework -->
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="length-check-container">
+            Minimum length 8 characters
+            <span id="length-check"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="uppercase-check-container">
+            At least one upper case character
+            <span id="uppercase-check"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="lowercase-check-container">
+            At least one lower case character
+            <span id="lowercase-check"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="number-check-container">
+            At least one number
+        <span id="number-check"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="specialchar-check-container">
+            At least one special character
+            <span id="specialchar-check"></span>
+        </li>
+    </ul>
 </div>
 
 
