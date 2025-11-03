@@ -23,7 +23,7 @@ PASSWORD CATEGORIES
  
 /*
 TESTS
-    //Test code to prove that js is linked to html file and working:
+    //Test code to prove that js is linked to html file and working at set up:
 
     alert("JavaScript is working!");
     console.log("Script loaded!"); 
