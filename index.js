@@ -40,11 +40,14 @@ function pwdCheck (pwd) {
         //console.log("Invalid - please enter a valid password")
         return
     }
+
+    let score = 0 // this will accumulate with each true pw character check
     
     // --- Check 1: min length = 8 characters ---
     if (pwd.length >= 8) {
         document.getElementById('length-check').innerText = '✅'
         document.getElementById('length-check-container').classList.add('list-group-item-success')
+        score++
     } else {
         document.getElementById('length-check').innerText = '❌'
         document.getElementById('length-check-container').classList.add('list-group-item-danger')
@@ -84,6 +87,7 @@ function pwdCheck (pwd) {
     if (hasLowerCase) {
         document.getElementById('lowercase-check').innerText = '✅'
         document.getElementById('lowercase-check-container').classList.add('list-group-item-success')
+        score++    //score adds one if valid character
     } else {
         document.getElementById('lowercase-check').innerText = '❌'
         document.getElementById('lowercase-check-container').classList.add('list-group-item-danger')
@@ -92,6 +96,7 @@ function pwdCheck (pwd) {
     if (hasUpperCase) {
         document.getElementById('uppercase-check').innerText = '✅'
         document.getElementById('uppercase-check-container').classList.add('list-group-item-success')
+        score++    //score adds one if valid character
     } else {
         document.getElementById('uppercase-check').innerText = '❌'
         document.getElementById('uppercase-check-container').classList.add('list-group-item-danger')
@@ -100,6 +105,7 @@ function pwdCheck (pwd) {
     if (hasNumber) {
         document.getElementById('number-check').innerText = '✅'
         document.getElementById('number-check-container').classList.add('list-group-item-success')
+        score++    //score adds one if valid character
     } else {
         document.getElementById('number-check').innerText = '❌'
         document.getElementById('number-check-container').classList.add('list-group-item-danger')
@@ -108,9 +114,18 @@ function pwdCheck (pwd) {
     if (hasSpecChar ) {
         document.getElementById('specialchar-check').innerText = '✅'
         document.getElementById('specialchar-check-container').classList.add('list-group-item-success')
+        score++    //score adds one if valid character
     } else {
         document.getElementById('specialchar-check').innerText = '❌'
         document.getElementById('specialchar-check-container').classList.add('list-group-item-danger')
+    }
+
+    if (score >= 5) {
+        document.getElementById("strong-pwd").style.display = 'block'
+    } else if (score >= 3) {
+        document.getElementById("moderate-pwd").style.display = 'block'
+    } else {
+        document.getElementById("weak-pwd").style.display = 'block'
     }
 
 }
